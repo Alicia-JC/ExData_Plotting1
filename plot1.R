@@ -8,6 +8,7 @@ data2 <- subset(data, Date == strptime("2007-02-01","%Y-%m-%d") | Date == strpti
 
 data2$Global_active_power <- as.numeric(data2$Global_active_power)
 
+png(filename="plot1.png", width = 480, height = 480, units = "px")
 plot1 <- hist(data2$Global_active_power,main = "Global Active Power",
               xlab = "Global Active Power (kilowatts)",
               ylab = "Frequency",
@@ -20,5 +21,4 @@ plot1 <- hist(data2$Global_active_power,main = "Global Active Power",
 axis(side=1,at=c(0,2,4,6))
 axis(side=2, at=c(0,200,400,600,800,1000,1200))
 
-png(filename="plot1.png", width = 480, height = 480, units = "px")
 dev.off()

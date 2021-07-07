@@ -11,7 +11,8 @@ data2$Global_active_power <- as.numeric(data2$Global_active_power)
 
 data2$exacttime <- as.POSIXct(paste(data2$Date,data2$Time), format = "%Y-%m-%d %H:%M:%S")
 
+png(filename="plot2.png", width = 480, height = 480, units = "px")
+
 plot2 <- plot(data2$exacttime,data2$Global_active_power, type="l", ylab = "Global Active Power (kilowatts)", xlab="")
 
-png(filename="plot2.png", width = 480, height = 480, units = "px")
 dev.off()
